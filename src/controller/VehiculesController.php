@@ -38,17 +38,14 @@ class VehiculesController {
 
     public function update($id){
 
-        $vehicule= Vehicule::findOne($id);
-
-        $vehicule= setId($_POST['id']);
-        $vehicule= setMarque($_POST['marque']);
-        $vehicule= setModele($_POST['modele']);
-        $vehicule= setCouleur($_POST['couleur']);
-        $vehicule= setImmatriculation($_POST['immatriculation']);
-        
+        $vehicule = Vehicule::findOne($id);
+        $vehicule->setMarque($_POST['marque']);
+        $vehicule->setModele($_POST['modele']);
+        $vehicule->setCouleur($_POST['couleur']);
+        $vehicule->setImmatriculation($_POST['immatriculation']);
         $vehicule->update();
 
-        Header ('Location: '.url('liste-vehicule/' . $vehicule->GetId()));
+        Header('Location: ' . url('liste-vehicules/' . $vehicule->getId()));
     }
 
     public function delete($id) {

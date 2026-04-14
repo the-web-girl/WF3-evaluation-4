@@ -37,12 +37,12 @@ class AssociationsController {
 
     public function update($id){
 
-        $association= Association::findOne($id);
-        $association= setIdVehicule($_POST['id_vehicule']);
-        $association= setIdConducteur($_POST['id_conducteur']);
+        $association = Association::findOne($id);
+        $association->setIdVehicule($_POST['id_vehicule']);
+        $association->setIdConducteur($_POST['id_conducteur']);
         $association->update();
 
-        Header ('Location: '.url('liste-association/' . $association->GetId()));
+        Header('Location: ' . url('liste-associations/' . $association->getId()));
     }
 
 

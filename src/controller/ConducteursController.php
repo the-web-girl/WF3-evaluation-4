@@ -37,12 +37,12 @@ class ConducteursController {
 
     public function update($id){
 
-        $conducteur= Conducteur::findOne($id);
-        $conducteur= setNom($_POST['nom']);
-        $conducteur= setMail($_POST['mail']);
+        $conducteur = Conducteur::findOne($id);
+        $conducteur->setPrenom($_POST['prenom']);
+        $conducteur->setNom($_POST['nom']);
         $conducteur->update();
 
-        Header ('Location: '.url('liste-conducteur/' . $conducteur->GetId()));
+        Header('Location: ' . url('liste-conducteurs/' . $conducteur->getId()));
     }
 
     public function delete($id) {

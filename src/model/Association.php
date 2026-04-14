@@ -72,8 +72,8 @@ class Association extends Db {
         return $association;
     }
 
-    public static function update(){
-        if ($this->id > 0){
+    public function update(){
+        if ($this->getId() > 0){
         $data= [
             "id"=>$this->getId(),
             "id_vehicule"=>$this->getIdVehicule(),

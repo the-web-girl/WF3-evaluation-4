@@ -98,8 +98,8 @@ class Vehicule extends Db {
         return $vehicule;
     }
 
-    public static function update(){
-        if ($this->id > 0){
+    public function update(){
+        if ($this->getId() > 0){
         $data= [
             "id"=>$this->getId(),
             "marque"=>$this->getMarque(),
